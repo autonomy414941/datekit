@@ -7,12 +7,18 @@
   <meta name="description" content="Free date calculator: date difference, add/subtract days, and Unix timestamp converter in one fast page." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://devtoolbox.dedyn.io/datekit/" />
+  <link rel="sitemap" type="application/xml" title="DateKit Sitemap" href="https://devtoolbox.dedyn.io/datekit/sitemap.xml" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DateKit" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="DateKit - Free Date Calculator" />
   <meta property="og:description" content="Date difference, date math, and Unix timestamp conversion." />
   <meta property="og:url" content="https://devtoolbox.dedyn.io/datekit/" />
   <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DateKit - Free Date Calculator" />
+  <meta name="twitter:description" content="Date difference, date math, and Unix timestamp conversion." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
   <meta name="theme-color" content="#0f172a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,6 +81,26 @@
       </article>
     </section>
 
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Common Questions</h2>
+      <details>
+        <summary>Can I calculate timezone differences?</summary>
+        <p>DateKit calculates based on your browser locale and displays UTC output for Unix conversions. For timezone-to-timezone scheduling, convert each time to Unix first.</p>
+      </details>
+      <details>
+        <summary>Does DateKit support negative date offsets?</summary>
+        <p>Yes. Use a negative number in Add / Subtract Days to move backwards from the base date.</p>
+      </details>
+      <details>
+        <summary>What Unix formats are accepted?</summary>
+        <p>You can input Unix seconds (10 digits) or milliseconds (13 digits). DateKit auto-detects the unit and returns local, UTC, and ISO values.</p>
+      </details>
+      <details>
+        <summary>Is DateKit free to use?</summary>
+        <p>Yes. DateKit runs fully in your browser and is free to use.</p>
+      </details>
+    </section>
+
     <footer class="footer">
       <a href="/" aria-label="Back to DevToolbox home">Back to DevToolbox</a>
       <button id="copy-link" type="button">Copy URL</button>
@@ -85,12 +111,65 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "SoftwareApplication",
     "name": "DateKit",
     "url": "https://devtoolbox.dedyn.io/datekit/",
     "applicationCategory": "UtilitiesApplication",
+    "applicationSubCategory": "Date and Time Calculator",
     "operatingSystem": "Web",
-    "description": "Date difference calculator, date math tool, and Unix timestamp converter."
+    "description": "Date difference calculator, date math tool, and Unix timestamp converter.",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "featureList": [
+      "Date difference with signed duration output",
+      "Add or subtract days from any base date",
+      "Convert between Unix timestamps and human-readable dates"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I calculate timezone differences?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DateKit calculates using your browser locale and shows UTC output for Unix conversions. For timezone scheduling, convert each local time to Unix first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does DateKit support negative date offsets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Enter a negative number in Add / Subtract Days to move backwards from the base date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Unix formats are accepted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DateKit accepts Unix seconds and Unix milliseconds, detects the unit automatically, and returns local, UTC, and ISO outputs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is DateKit free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. DateKit is free and runs in your browser."
+        }
+      }
+    ]
   }
   </script>
   <script src="./app.js" defer></script>
