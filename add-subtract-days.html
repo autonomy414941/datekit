@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Or Subtract Days Calculator - DateKit</title>
+  <meta name="description" content="Add or subtract days from any date and get the resulting weekday instantly. Free browser-based date offset calculator." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/datekit/add-subtract-days.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DateKit" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Add Or Subtract Days Calculator - DateKit" />
+  <meta property="og:description" content="Shift any date forward or backward by whole days and check weekdays." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/datekit/add-subtract-days.html" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Add Or Subtract Days Calculator - DateKit" />
+  <meta name="twitter:description" content="Shift any date forward or backward by whole days and check weekdays." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-a"></div>
+  <div class="bg-orb bg-orb-b"></div>
+  <main class="page">
+    <header class="hero">
+      <p class="kicker">DateKit</p>
+      <h1>Add Or Subtract Days</h1>
+      <p class="subtitle">Shift any base date by positive or negative day offsets and keep weekday context.</p>
+      <nav class="tool-links" aria-label="DateKit calculators">
+        <a class="pill-link" href="./">All Date Tools</a>
+        <a class="pill-link" href="./days-between-dates.html">Days Between Dates</a>
+        <a class="pill-link" href="./unix-timestamp-converter.html">Unix Converter</a>
+      </nav>
+    </header>
+
+    <section class="grid single-grid">
+      <article class="card" aria-labelledby="math-title">
+        <h2 id="math-title">Add / Subtract Days</h2>
+        <label>
+          Base date
+          <input id="math-base" type="date" />
+        </label>
+        <label>
+          Days (negative allowed)
+          <input id="math-days" type="number" step="1" value="30" />
+        </label>
+        <button id="math-run" type="button">Compute Result</button>
+        <div id="math-result" class="result" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section class="context" aria-labelledby="add-subtract-notes-title">
+      <h2 id="add-subtract-notes-title">Use Cases</h2>
+      <p>Use positive numbers for deadlines and renewal windows. Use negative numbers for lookback periods and retrospective analysis windows.</p>
+      <p>The result includes both source and destination weekdays so you can spot weekend landings before publishing schedules.</p>
+      <p>Inputs are whole days to keep calculations predictable for policy cutoffs and contract dates.</p>
+    </section>
+
+    <footer class="footer">
+      <a href="/" aria-label="Back to DevToolbox home">Back to DevToolbox</a>
+      <button id="copy-link" type="button">Copy URL</button>
+      <span id="copy-status" class="copy-status" aria-live="polite"></span>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Add Or Subtract Days Calculator",
+    "url": "https://devtoolbox.dedyn.io/datekit/add-subtract-days.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "Add or subtract whole days from any date and see weekday output.",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

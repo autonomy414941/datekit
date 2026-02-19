@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unix Timestamp Converter - DateKit</title>
+  <meta name="description" content="Convert Unix timestamps to human-readable dates and convert date-time inputs back to Unix seconds or milliseconds." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/datekit/unix-timestamp-converter.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DateKit" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Unix Timestamp Converter - DateKit" />
+  <meta property="og:description" content="Convert Unix seconds or milliseconds to UTC/local date and back." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/datekit/unix-timestamp-converter.html" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Unix Timestamp Converter - DateKit" />
+  <meta name="twitter:description" content="Convert Unix seconds or milliseconds to UTC/local date and back." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-a"></div>
+  <div class="bg-orb bg-orb-b"></div>
+  <main class="page">
+    <header class="hero">
+      <p class="kicker">DateKit</p>
+      <h1>Unix Timestamp Converter</h1>
+      <p class="subtitle">Convert date-time values to Unix and decode Unix seconds or milliseconds into local, UTC, and ISO output.</p>
+      <nav class="tool-links" aria-label="DateKit calculators">
+        <a class="pill-link" href="./">All Date Tools</a>
+        <a class="pill-link" href="./days-between-dates.html">Days Between Dates</a>
+        <a class="pill-link" href="./add-subtract-days.html">Add Or Subtract Days</a>
+      </nav>
+    </header>
+
+    <section class="grid single-grid">
+      <article class="card" aria-labelledby="unix-title">
+        <h2 id="unix-title">Unix Timestamp Converter</h2>
+        <label>
+          Date &amp; time
+          <input id="unix-date" type="datetime-local" />
+        </label>
+        <button id="unix-from-date" type="button">To Unix</button>
+
+        <label>
+          Unix (seconds or milliseconds)
+          <input id="unix-input" type="text" inputmode="numeric" placeholder="1700000000" />
+        </label>
+        <button id="unix-to-date" type="button">To Date</button>
+        <div id="unix-result" class="result" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section class="context" aria-labelledby="unix-notes-title">
+      <h2 id="unix-notes-title">Timestamp Notes</h2>
+      <p>The converter auto-detects unit by magnitude: typical 10-digit values are treated as seconds, larger values as milliseconds.</p>
+      <p>Returned values include local time, UTC text, and ISO-8601 so you can copy directly into logs, APIs, and incident timelines.</p>
+      <p>If results look shifted, verify your source timestamp timezone assumptions before comparing system events.</p>
+    </section>
+
+    <footer class="footer">
+      <a href="/" aria-label="Back to DevToolbox home">Back to DevToolbox</a>
+      <button id="copy-link" type="button">Copy URL</button>
+      <span id="copy-status" class="copy-status" aria-live="polite"></span>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Unix Timestamp Converter",
+    "url": "https://devtoolbox.dedyn.io/datekit/unix-timestamp-converter.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "Convert Unix seconds or milliseconds to human-readable date values and back.",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

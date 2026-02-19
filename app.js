@@ -24,6 +24,9 @@ function toLocalDateTimeInput(date) {
 }
 
 function setResult(el, text, error = false) {
+  if (!el) {
+    return;
+  }
   el.textContent = text;
   el.classList.toggle("error", error);
 }
@@ -48,6 +51,10 @@ function formatDuration(ms) {
 }
 
 function runDiff() {
+  if (!diffStart || !diffEnd || !diffResult) {
+    return;
+  }
+
   const start = new Date(diffStart.value);
   const end = new Date(diffEnd.value);
 
@@ -77,6 +84,10 @@ function formatWeekday(date) {
 }
 
 function runDateMath() {
+  if (!mathBase || !mathDays || !mathResult) {
+    return;
+  }
+
   if (!mathBase.value) {
     setResult(mathResult, "Select a base date.", true);
     return;
@@ -108,6 +119,10 @@ function runDateMath() {
 }
 
 function runUnixFromDate() {
+  if (!unixDate || !unixResult) {
+    return;
+  }
+
   const date = new Date(unixDate.value);
   if (Number.isNaN(date.getTime())) {
     setResult(unixResult, "Select a date and time first.", true);
@@ -129,6 +144,10 @@ function runUnixFromDate() {
 }
 
 function runUnixToDate() {
+  if (!unixInput || !unixResult) {
+    return;
+  }
+
   const raw = unixInput.value.trim();
   if (!raw) {
     setResult(unixResult, "Enter a Unix value.", true);
@@ -161,39 +180,89 @@ function runUnixToDate() {
 }
 
 async function copyUrl() {
+  if (!copyStatus) {
+    return;
+  }
+
   try {
     await navigator.clipboard.writeText(window.location.href);
     copyStatus.textContent = "Copied";
   } catch (_error) {
     copyStatus.textContent = "Copy failed";
   }
+
   setTimeout(() => {
     copyStatus.textContent = "";
   }, 1200);
 }
 
-function seedDefaults() {
-  const now = new Date();
+function initDiff(now) {
+  if (!diffStart || !diffEnd || !diffResult) {
+    return;
+  }
+
   const weekAgo = new Date(now);
   weekAgo.setDate(weekAgo.getDate() - 7);
 
   diffStart.value = toLocalDateTimeInput(weekAgo);
   diffEnd.value = toLocalDateTimeInput(now);
-  mathBase.value = toLocalDateInput(now);
-  mathDays.value = "30";
-  unixDate.value = toLocalDateTimeInput(now);
-
   setResult(diffResult, "Pick dates and press Calculate.");
-  setResult(mathResult, "Pick a date and offset, then Compute.");
-  setResult(unixResult, "Convert in either direction.");
+
+  const button = $("diff-run");
+  if (button) {
+    button.addEventListener("click", runDiff);
+  }
 }
 
-$("diff-run").addEventListener("click", runDiff);
-$("math-run").addEventListener("click", runDateMath);
-$("unix-from-date").addEventListener("click", runUnixFromDate);
-$("unix-to-date").addEventListener("click", runUnixToDate);
-$("copy-link").addEventListener("click", () => {
-  void copyUrl();
-});
+function initDateMath(now) {
+  if (!mathBase || !mathDays || !mathResult) {
+    return;
+  }
 
-seedDefaults();
+  mathBase.value = toLocalDateInput(now);
+  mathDays.value = "30";
+  setResult(mathResult, "Pick a date and offset, then Compute.");
+
+  const button = $("math-run");
+  if (button) {
+    button.addEventListener("click", runDateMath);
+  }
+}
+
+function initUnix(now) {
+  if (unixDate && unixResult) {
+    unixDate.value = toLocalDateTimeInput(now);
+    setResult(unixResult, "Convert in either direction.");
+  }
+
+  const fromButton = $("unix-from-date");
+  if (fromButton) {
+    fromButton.addEventListener("click", runUnixFromDate);
+  }
+
+  const toButton = $("unix-to-date");
+  if (toButton) {
+    toButton.addEventListener("click", runUnixToDate);
+  }
+}
+
+function initCopy() {
+  const copyButton = $("copy-link");
+  if (!copyButton) {
+    return;
+  }
+
+  copyButton.addEventListener("click", () => {
+    void copyUrl();
+  });
+}
+
+function init() {
+  const now = new Date();
+  initDiff(now);
+  initDateMath(now);
+  initUnix(now);
+  initCopy();
+}
+
+init();

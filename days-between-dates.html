@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Days Between Dates Calculator - DateKit</title>
+  <meta name="description" content="Calculate days, hours, and minutes between two dates with signed output. Fast browser-based days between dates calculator." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/datekit/days-between-dates.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DateKit" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Days Between Dates Calculator - DateKit" />
+  <meta property="og:description" content="Find exact days, hours, and minutes between two date-time values." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/datekit/days-between-dates.html" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Days Between Dates Calculator - DateKit" />
+  <meta name="twitter:description" content="Find exact days, hours, and minutes between two date-time values." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-a"></div>
+  <div class="bg-orb bg-orb-b"></div>
+  <main class="page">
+    <header class="hero">
+      <p class="kicker">DateKit</p>
+      <h1>Days Between Dates Calculator</h1>
+      <p class="subtitle">Measure exact time gaps between two moments with signed days, hours, and minutes.</p>
+      <nav class="tool-links" aria-label="DateKit calculators">
+        <a class="pill-link" href="./">All Date Tools</a>
+        <a class="pill-link" href="./add-subtract-days.html">Add Or Subtract Days</a>
+        <a class="pill-link" href="./unix-timestamp-converter.html">Unix Converter</a>
+      </nav>
+    </header>
+
+    <section class="grid single-grid">
+      <article class="card" aria-labelledby="diff-title">
+        <h2 id="diff-title">Date Difference</h2>
+        <label>
+          Start
+          <input id="diff-start" type="datetime-local" />
+        </label>
+        <label>
+          End
+          <input id="diff-end" type="datetime-local" />
+        </label>
+        <button id="diff-run" type="button">Calculate Difference</button>
+        <div id="diff-result" class="result" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section class="context" aria-labelledby="days-between-notes-title">
+      <h2 id="days-between-notes-title">How This Calculator Counts</h2>
+      <p>The result is signed. If the end date is earlier than the start date, values are negative.</p>
+      <p>Use date and time values when you need partial-day precision. For day-only planning, set both times to midnight.</p>
+      <p>You get a compact duration plus decimal days, hours, and minutes so you can reuse the numbers in project plans and reminders.</p>
+    </section>
+
+    <footer class="footer">
+      <a href="/" aria-label="Back to DevToolbox home">Back to DevToolbox</a>
+      <button id="copy-link" type="button">Copy URL</button>
+      <span id="copy-status" class="copy-status" aria-live="polite"></span>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Days Between Dates Calculator",
+    "url": "https://devtoolbox.dedyn.io/datekit/days-between-dates.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate signed days, hours, and minutes between two dates.",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
