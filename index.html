@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DateKit - Date Difference, Date Math, Unix Time Converter</title>
+  <meta name="description" content="Free date calculator: date difference, add/subtract days, and Unix timestamp converter in one fast page." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/datekit/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DateKit - Free Date Calculator" />
+  <meta property="og:description" content="Date difference, date math, and Unix timestamp conversion." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/datekit/" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-a"></div>
+  <div class="bg-orb bg-orb-b"></div>
+  <main class="page">
+    <header class="hero">
+      <p class="kicker">DateKit</p>
+      <h1>Date Tools That Stay Out Of Your Way</h1>
+      <p class="subtitle">Calculate date differences, shift dates by days, and convert Unix timestamps without switching tabs.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card" aria-labelledby="diff-title">
+        <h2 id="diff-title">Date Difference</h2>
+        <label>
+          Start
+          <input id="diff-start" type="datetime-local" />
+        </label>
+        <label>
+          End
+          <input id="diff-end" type="datetime-local" />
+        </label>
+        <button id="diff-run" type="button">Calculate</button>
+        <div id="diff-result" class="result" aria-live="polite"></div>
+      </article>
+
+      <article class="card" aria-labelledby="math-title">
+        <h2 id="math-title">Add / Subtract Days</h2>
+        <label>
+          Base date
+          <input id="math-base" type="date" />
+        </label>
+        <label>
+          Days (negative allowed)
+          <input id="math-days" type="number" step="1" value="30" />
+        </label>
+        <button id="math-run" type="button">Compute</button>
+        <div id="math-result" class="result" aria-live="polite"></div>
+      </article>
+
+      <article class="card" aria-labelledby="unix-title">
+        <h2 id="unix-title">Unix Timestamp Converter</h2>
+        <label>
+          Date &amp; time
+          <input id="unix-date" type="datetime-local" />
+        </label>
+        <button id="unix-from-date" type="button">To Unix</button>
+
+        <label>
+          Unix (seconds or milliseconds)
+          <input id="unix-input" type="text" inputmode="numeric" placeholder="1700000000" />
+        </label>
+        <button id="unix-to-date" type="button">To Date</button>
+        <div id="unix-result" class="result" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <a href="/" aria-label="Back to DevToolbox home">Back to DevToolbox</a>
+      <button id="copy-link" type="button">Copy URL</button>
+      <span id="copy-status" class="copy-status" aria-live="polite"></span>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DateKit",
+    "url": "https://devtoolbox.dedyn.io/datekit/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "Date difference calculator, date math tool, and Unix timestamp converter."
+  }
+  </script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
