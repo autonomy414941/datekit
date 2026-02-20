@@ -60,6 +60,23 @@
       <p>The result is signed. If the end date is earlier than the start date, values are negative.</p>
       <p>Use date and time values when you need partial-day precision. For day-only planning, set both times to midnight.</p>
       <p>You get a compact duration plus decimal days, hours, and minutes so you can reuse the numbers in project plans and reminders.</p>
+      <p>Need Unix-friendly output? Use the <a href="./unix-timestamp-converter.html">Unix Timestamp Converter</a> to move between human time and API timestamps.</p>
+    </section>
+
+    <section class="faq" aria-labelledby="days-between-faq-title">
+      <h2 id="days-between-faq-title">FAQ</h2>
+      <details>
+        <summary>Does this include both start and end dates?</summary>
+        <p>No. It calculates elapsed time between the two values. For inclusive day counts, add one day to the result.</p>
+      </details>
+      <details>
+        <summary>Can I calculate business days only?</summary>
+        <p>This tool returns calendar duration. For business-day schedules, use the result as a baseline and then remove weekends/holidays separately.</p>
+      </details>
+      <details>
+        <summary>Why do I see negative values?</summary>
+        <p>Negative values mean your end date is earlier than your start date, which is useful for overdue checks and lookback windows.</p>
+      </details>
     </section>
 
     <footer class="footer">
@@ -79,6 +96,58 @@
     "operatingSystem": "Web",
     "description": "Calculate signed days, hours, and minutes between two dates.",
     "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "DateKit",
+        "item": "https://devtoolbox.dedyn.io/datekit/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Days Between Dates Calculator",
+        "item": "https://devtoolbox.dedyn.io/datekit/days-between-dates.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this include both start and end dates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculator returns elapsed time between the two values. Add one day yourself if you need an inclusive day count."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate business days only?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool returns calendar duration. Use the output as a baseline, then remove weekends and holidays for business-day estimates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I see negative values?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Negative values mean the end date is earlier than the start date."
+        }
+      }
+    ]
   }
   </script>
   <script src="./app.js" defer></script>

@@ -60,6 +60,23 @@
       <p>Use positive numbers for deadlines and renewal windows. Use negative numbers for lookback periods and retrospective analysis windows.</p>
       <p>The result includes both source and destination weekdays so you can spot weekend landings before publishing schedules.</p>
       <p>Inputs are whole days to keep calculations predictable for policy cutoffs and contract dates.</p>
+      <p>Need exact elapsed time between two moments instead? Open <a href="./days-between-dates.html">Days Between Dates</a> for signed day/hour/minute totals.</p>
+    </section>
+
+    <section class="faq" aria-labelledby="add-subtract-faq-title">
+      <h2 id="add-subtract-faq-title">FAQ</h2>
+      <details>
+        <summary>Can I subtract days with this calculator?</summary>
+        <p>Yes. Enter a negative number to move backward from the base date.</p>
+      </details>
+      <details>
+        <summary>Does it account for leap years?</summary>
+        <p>Yes. Date math follows the real calendar, including leap years and month-length differences.</p>
+      </details>
+      <details>
+        <summary>Can I use this for recurring schedules?</summary>
+        <p>Yes. It works well for renewal reminders, notice periods, and compliance windows that use fixed-day offsets.</p>
+      </details>
     </section>
 
     <footer class="footer">
@@ -79,6 +96,58 @@
     "operatingSystem": "Web",
     "description": "Add or subtract whole days from any date and see weekday output.",
     "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "DateKit",
+        "item": "https://devtoolbox.dedyn.io/datekit/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Add Or Subtract Days Calculator",
+        "item": "https://devtoolbox.dedyn.io/datekit/add-subtract-days.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I subtract days with this calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Enter a negative number and the calculator moves backward from the base date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it account for leap years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculation follows real calendar rules, including leap years and month-length differences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this for recurring schedules?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It is useful for renewal reminders, notice periods, and policy windows that use fixed day offsets."
+        }
+      }
+    ]
   }
   </script>
   <script src="./app.js" defer></script>
